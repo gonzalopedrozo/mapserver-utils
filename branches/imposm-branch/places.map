@@ -1,0 +1,182 @@
+
+LAYER
+    _default_layer
+    TYPE ANNOTATION
+    NAME "places"
+    DATA _places_data
+    LABELITEM 'name'
+    CLASSITEM 'place'
+#ifdef _display_capitals
+    CLASS
+        EXPRESSION ("[place]"="city" and "[capital]"="yes")
+        #ifdef _display_place_symbol
+        STYLE
+            SIZE _capital_size
+            SYMBOL "citycircle"
+            COLOR _capital_clr
+            OUTLINECOLOR 0 0 0
+        END
+        STYLE
+            SIZE 2
+            SYMBOL "citycircle"
+            COLOR "#000000"
+        END
+        #endif
+        LABEL
+            FONT sc
+            TYPE TRUETYPE
+            SIZE _capital_lbl_size
+            COLOR _capital_lbl_clr
+            OUTLINECOLOR _capital_lbl_ol_clr
+            OUTLINEWIDTH 4
+            WRAP ' '
+            MAXLENGTH 8
+            ALIGN CENTER
+            PRIORITY 10
+            PARTIALS FALSE
+            #ifdef _display_place_symbol
+            POSITION auto
+            #else
+            POSITION cc
+            #endif
+        END
+    END
+#endif
+#ifdef _display_countries
+    CLASS
+        EXPRESSION 'country'
+        LABEL
+            FONT scb
+            TYPE TRUETYPE
+            SIZE _country_lbl_size
+            COLOR _country_lbl_clr
+            WRAP ' '
+            MAXLENGTH 8
+            ALIGN CENTER
+            PRIORITY 9
+            BUFFER 1
+            PARTIALS FALSE
+            POSITION cc
+        END
+    END
+#endif
+#ifdef _display_cities
+    CLASS
+        EXPRESSION 'city'
+        #ifdef _display_place_symbol
+        STYLE
+            SIZE _city_size
+            SYMBOL "citycircle"
+            COLOR _city_clr
+            OUTLINECOLOR 0 0 0
+        END
+        #endif
+        LABEL
+            FONT sc
+            TYPE TRUETYPE
+            SIZE _city_lbl_size
+            COLOR _city_lbl_clr
+            OUTLINECOLOR _city_lbl_ol_clr
+            OUTLINEWIDTH 4
+            WRAP ' '
+            MAXLENGTH 8
+            ALIGN CENTER
+            PRIORITY 9
+            PARTIALS FALSE
+            POSITION auto
+            #ifdef _display_place_symbol
+            POSITION auto
+            #else
+            POSITION cc
+            #endif
+        END
+    END
+#endif
+#ifdef _display_towns
+    CLASS
+        EXPRESSION 'town'
+        #ifdef _display_place_symbol
+        STYLE
+            SIZE _town_size
+            SYMBOL "citycircle"
+            COLOR _town_clr
+            OUTLINECOLOR 0 0 0
+        END
+        #endif
+        LABEL
+            FONT sc
+            TYPE TRUETYPE
+            SIZE _town_lbl_size
+            COLOR _town_lbl_clr
+            OUTLINECOLOR _town_lbl_ol_clr
+            OUTLINEWIDTH 3
+            WRAP ' '
+            MAXLENGTH 8
+            ALIGN CENTER
+            PRIORITY 8
+            PARTIALS FALSE
+            POSITION AUTO
+            #ifdef _display_place_symbol
+            POSITION auto
+            #else
+            POSITION cc
+            #endif
+        END
+    END
+#endif
+#ifdef _display_villages
+    CLASS
+        EXPRESSION ('[place]'='village')
+        #ifdef _display_place_symbol
+        STYLE
+            SYMBOL "citycircle"
+            COLOR 255 255 255
+            OUTLINECOLOR 0 0 0
+            SIZE _village_size
+        END
+        #endif
+        LABEL
+            FONT sc
+            TYPE TRUETYPE
+            SIZE _village_lbl_size
+            COLOR _village_lbl_clr
+            OUTLINECOLOR _village_lbl_ol_clr
+            OUTLINEWIDTH 3
+            WRAP ' '
+            MAXLENGTH 8
+            ALIGN CENTER
+            PRIORITY 8
+            PARTIALS FALSE
+            POSITION AUTO
+            #ifdef _display_place_symbol
+            POSITION auto
+            #else
+            POSITION cc
+            #endif
+        END
+    END
+#endif
+#ifdef _display_other_places
+    CLASS
+        EXPRESSION ('[place]'='suburb' or '[place]'='hamlet')
+        #ifdef _display_place_symbol
+        STYLE
+            SIZE _other_place_size
+        END
+        #endif
+        LABEL
+            FONT sc
+            TYPE TRUETYPE
+            SIZE _other_place_lbl_size
+            COLOR _other_place_lbl_clr
+            OUTLINECOLOR _other_place_lbl_ol_clr
+            OUTLINEWIDTH 3
+            WRAP ' '
+            MAXLENGTH 8
+            ALIGN CENTER
+            PRIORITY 8
+            PARTIALS FALSE
+        END
+    END
+#endif
+END
