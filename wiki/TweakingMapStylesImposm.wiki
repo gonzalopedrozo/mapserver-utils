@@ -14,7 +14,7 @@ The following parameters are configurable at the top of the Makefile:
 
  * *OSM_PREFIX*: the prefix of the table names in the postgis database
  * *OSM_SRID*: EPSG code of the mapfile's output projection (common values are 4326 for lon,lat and 900913 for the Google Mercator projection)
- * *OSM_UNITS*: MapServer units corresponding to the OSM_SRID
+ * *OSM_UNITS*: MapServer units corresponding to the OSM_SRID (common values: DD or METERS)
  * *OSM_EXTENT*: Default extents to use in the generated mapfile (in the same coordinate system as OSM_SRID)
  * *STYLE*: Name of the map style to generate. Three styles are available to choose from by default: default, google and bing
 
