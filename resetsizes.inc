@@ -12,15 +12,18 @@
 #undef _trunk_link_width
 #undef _trunk_lbl_size
 
+#undef _display_primary
 #undef _primary_width
 #undef _primary_link_width
 #undef _primary_lbl_size
 #undef _primary_lbl_ref
 
+#undef _display_secondary
 #undef _secondary_width
 #undef _secondary_link_width
 #undef _secondary_lbl_size
 
+#undef _display_tertiary
 #undef _display_tertiary_single
 #undef _display_tertiary
 #undef _tertiary_width
