@@ -1,0 +1,198 @@
+#include theme
+MAP
+
+FONTSET "fonts.lst"
+IMAGETYPE png
+MAXSIZE 4000
+SIZE 800 800
+EXTENT OSM_EXTENT
+UNITS OSM_UNITS 
+IMAGECOLOR _ocean_clr0
+WEB
+   METADATA
+      "ows_enable_request"   "*"
+      "wms_srs" OSM_WMS_SRS 
+      "labelcache_map_edge_buffer" "-10"
+      "wms_title" "osm france"
+   END
+END
+
+DEBUG _debug
+#if _debug > 0 || _layerdebug > 0
+CONFIG "MS_ERRORFILE" "stderr"
+#endif
+
+CONFIG "PROJ_LIB" _proj_lib
+PROJECTION
+   "init=epsg:OSM_SRID"
+END
+
+
+## if you want unique layer names across zoom levels, use
+## #define layername(name,suffix) xxstr(name)
+## instead of the following macro
+
+#define layername(name,suffix) xstr(name,suffix)
+#define xstr(s,t) xxstr(s##t)
+#define xxstr(s) #s
+
+#include "level0.inc"
+#include "land.map"
+#include "landusage.map"
+#include "highways.map"
+#include "buildings.map"
+#include "borders.map"
+#include "places.map"
+
+#include "level1.inc"
+#include "land.map"
+#include "landusage.map"
+#include "highways.map"
+#include "buildings.map"
+#include "borders.map"
+#include "places.map"
+
+#include "level2.inc"
+#include "land.map"
+#include "landusage.map"
+#include "highways.map"
+#include "buildings.map"
+#include "borders.map"
+#include "places.map"
+
+#include "level3.inc"
+#include "land.map"
+#include "landusage.map"
+#include "highways.map"
+#include "buildings.map"
+#include "borders.map"
+#include "places.map"
+
+#include "level4.inc"
+#include "land.map"
+#include "landusage.map"
+#include "highways.map"
+#include "buildings.map"
+#include "borders.map"
+#include "places.map"
+
+#include "level5.inc"
+#include "land.map"
+#include "landusage.map"
+#include "highways.map"
+#include "buildings.map"
+#include "borders.map"
+#include "places.map"
+
+#include "level6.inc"
+#include "land.map"
+#include "landusage.map"
+#include "highways.map"
+#include "buildings.map"
+#include "borders.map"
+#include "places.map"
+
+#include "level7.inc"
+#include "land.map"
+#include "landusage.map"
+#include "highways.map"
+#include "buildings.map"
+#include "borders.map"
+#include "places.map"
+
+#include "level8.inc"
+#include "land.map"
+#include "landusage.map"
+#include "highways.map"
+#include "buildings.map"
+#include "borders.map"
+#include "places.map"
+
+#include "level9.inc"
+#include "land.map"
+#include "landusage.map"
+#include "highways.map"
+#include "buildings.map"
+#include "borders.map"
+#include "places.map"
+
+#include "level10.inc"
+#include "land.map"
+#include "landusage.map"
+#include "highways.map"
+#include "buildings.map"
+#include "borders.map"
+#include "places.map"
+
+#include "level11.inc"
+#include "land.map"
+#include "landusage.map"
+#include "highways.map"
+#include "buildings.map"
+#include "borders.map"
+#include "places.map"
+
+#include "level12.inc"
+#include "land.map"
+#include "landusage.map"
+#include "highways.map"
+#include "buildings.map"
+#include "borders.map"
+#include "places.map"
+
+#include "level13.inc"
+#include "land.map"
+#include "landusage.map"
+#include "highways.map"
+#include "buildings.map"
+#include "borders.map"
+#include "places.map"
+
+#include "level14.inc"
+#include "land.map"
+#include "landusage.map"
+#include "highways.map"
+#include "buildings.map"
+#include "borders.map"
+#include "places.map"
+
+#include "level15.inc"
+#include "land.map"
+#include "landusage.map"
+#include "highways.map"
+#include "buildings.map"
+#include "borders.map"
+#include "places.map"
+
+#include "level16.inc"
+#include "land.map"
+#include "landusage.map"
+#include "highways.map"
+#include "buildings.map"
+#include "borders.map"
+#include "places.map"
+
+#include "level17.inc"
+#include "land.map"
+#include "landusage.map"
+#include "highways.map"
+#include "buildings.map"
+#include "borders.map"
+#include "places.map"
+
+#include "level18.inc"
+#include "land.map"
+#include "landusage.map"
+#include "highways.map"
+#include "buildings.map"
+#include "borders.map"
+#include "places.map"
+
+SYMBOL
+ name "citycircle"
+ type ellipse
+ points 1 1 end
+ filled true
+END
+
+END
